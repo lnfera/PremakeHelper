@@ -6,12 +6,12 @@ include "../../premake_helper/premake_helper_functions.lua"
 --=============================================================
 local PROJECT_SETTINGS = {
 	-- Project Name
-	NAME = "PROJECT_NAME",
+	NAME = "library_example",
 
 	-- Build Settings
-	KIND = KIND_CONSOLE,		-- ConsoleApp / StaticLib / SharedLib
+	KIND = KIND_LIBRARY,		-- ConsoleApp / StaticLib / SharedLib
 	LANGUAGE = LANGUAGE_CPP,	-- C / C++
-	PCH = "pch_foo",			 		-- Precompiled header (optional) (No file extension) Example: pch_math
+	PCH = "pch_library_example",-- Precompiled header (optional) (No file extension) Example: pch_math
 
 	-- Linker Settings
 	LINKER = {
