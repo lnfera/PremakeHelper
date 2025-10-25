@@ -41,3 +41,26 @@ function SetUpProject(setting)
 		end 
 
 end
+
+function GetPremakeLuaFiles()
+	local folders = os.matchdirs(DIRECTORIES.SOURCE.."*")
+	local premakeFiles = {}
+
+	local itr = 0
+	print("FOLDERS LOCATED")
+	for _, folderName in ipairs(folders) do
+
+		print(folderName)
+		local files = os.matchfiles(folderName.."/premake**.lua")
+
+		for i, file in ipairs(files) do
+			table.insert(premakeFiles, file)
+		end
+	end 
+
+	print("PREMAKE FILES LOCATED")
+	for p, fileName in ipairs(premakeFiles) do
+		print(fileName)
+	end
+	return premakeFiles	
+end

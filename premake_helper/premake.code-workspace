@@ -4,7 +4,9 @@
             "path": "."
         },
         {
-            "path": "../code/src"
+            "path": "../src/",
+			"name": "Project Defines",
+
         }
     ]
 }

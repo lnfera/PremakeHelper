@@ -30,5 +30,10 @@ workspace (SETTING_WORKSPACE.NAME)
 
 print("Done generating workspace...")
 
--- @TODO: make recursive
-include "project_defines/premake_foo"
+local premakeFiles = GetPremakeLuaFiles()
+
+print("Generating projects...")
+for _, path in pairs(premakeFiles) do
+	include(path)
+end
+print("Done generating projects")

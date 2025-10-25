@@ -1,10 +1,10 @@
 include "premake_defines"
-include "premake_helper_funtions"
+include "premake_helper_functions"
 
 --=============================================================
--- SETTING_PROJECT : Defines all project-level Premake settings
+-- PROJECT_SETTINGS : Defines all project-level Premake settings
 --=============================================================
-local SETTING_PROJECT
+local PROJECT_SETTINGS = {
 	-- Project Name
 	NAME = "PROJECT_NAME",
 
@@ -15,12 +15,12 @@ local SETTING_PROJECT
 
 	-- Linker Settings
 	LINKER = {
-		DEPENDSON = {  }, 		-- Other projects to build first
+		DEPENDSON = { }, 		-- Other projects to build first
 		INCLUDE_DIRS = { },		-- Header search paths
 		LINKS = { },			-- Libraries to link.
 		FILES = { }, 			-- File extensions and extra linker input files. Example: DIRECTORIES[SOURCE].."folder/**.hpp", DIRECTORIES[SOURCE].."folder/**.cpp"
 	},
-
+	
 	-- Config Filters from SETTING_WORKSPACE.CONFIGURATIONS.*
 	-- Example:
 	-- SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME = {
@@ -28,12 +28,9 @@ local SETTING_PROJECT
 	-- OPTIMIZE = ON / OFF,
 	-- KIND = KIND_CONSOLE / KIND_LIBRARY / KIND_WINDOWED
 	--}
-	CONFIG_FILTER = {
-		SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME = {
-		},
-		SETTING_WORKSPACE.CONFIGURATIONS.RELEASE.NAME = {
-		},
+	CONFIG_FILTER = { 
+
 	}
+}
 
-
-SetUpProject(CONFIG_PROJECT)
+SetUpProject(PROJECT_SETTINGS)

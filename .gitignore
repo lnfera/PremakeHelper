@@ -1,6 +1,6 @@
 /local/
 /temp/
-
+/bin/
 /.vs
 
 *.sln
