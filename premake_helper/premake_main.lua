@@ -33,7 +33,9 @@ print("Done generating workspace...")
 local premakeFiles = GetPremakeLuaFiles()
 
 print("Generating projects...")
+
 for _, path in pairs(premakeFiles) do
 	include(path)
 end
+
 print("Done generating projects")
