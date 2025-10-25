@@ -43,11 +43,11 @@ function SetUpProject(setting)
 end
 
 function GetPremakeLuaFiles()
-	local folders = os.matchdirs(DIRECTORIES.SOURCE.."*")
+	local folders = os.matchdirs(DIRECTORIES.SOURCE.."**")
 	local premakeFiles = {}
 
 	local itr = 0
-	print("FOLDERS LOCATED")
+	print("Folders found:")
 	for _, folderName in ipairs(folders) do
 
 		print(folderName)
@@ -58,7 +58,7 @@ function GetPremakeLuaFiles()
 		end
 	end 
 
-	print("PREMAKE FILES LOCATED")
+	print("Premake helper files found:")
 	for p, fileName in ipairs(premakeFiles) do
 		print(fileName)
 	end

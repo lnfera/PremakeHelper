@@ -1,23 +1,23 @@
-include "../../premake_helper/premake_defines.lua"
-include "../../premake_helper/premake_helper_functions.lua"
+include "../../../premake_helper/premake_defines.lua"
+include "../../../premake_helper/premake_helper_functions.lua"
 
 --=============================================================
 -- PROJECT_SETTINGS : Defines all project-level Premake settings
 --=============================================================
 local PROJECT_SETTINGS = {
 	-- Project Name
-	NAME = "Application",
+	NAME = "library_example",
 
 	-- Build Settings
-	KIND = KIND_CONSOLE,		-- ConsoleApp / StaticLib / SharedLib
+	KIND = KIND_LIBRARY,		-- ConsoleApp / StaticLib / SharedLib
 	LANGUAGE = LANGUAGE_CPP,	-- C / C++
-	PCH = "pch_console_application",			 		-- Precompiled header (optional) (No file extension) Example: pch_math
+	PCH = "pch_library_example",-- Precompiled header (optional) (No file extension) Example: pch_math
 
 	-- Linker Settings
 	LINKER = {
-		DEPENDSON = { "library_example" }, 		-- Other projects to build first
-		INCLUDE_DIRS = { "../library_example" },	-- Header search paths relative from premake_*.lua file
-		LINKS = { "library_example" },			-- Libraries to link.
+		DEPENDSON = { }, 		-- Other projects to build first
+		INCLUDE_DIRS = { "./" },		-- Header search paths
+		LINKS = { },			-- Libraries to link.
 		FILES = { 
 			"**.h",
 			"**.hpp",
