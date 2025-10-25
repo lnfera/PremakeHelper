@@ -16,7 +16,7 @@ local PROJECT_SETTINGS = {
 	-- Linker Settings
 	LINKER = {
 		DEPENDSON = { "library_example" }, 		-- Other projects to build first
-		INCLUDE_DIRS = { "library_example" },	-- Header search paths
+		INCLUDE_DIRS = { "../library_example" },	-- Header search paths relative from premake_*.lua file
 		LINKS = { "library_example" },			-- Libraries to link.
 		FILES = { 
 			"**.h",

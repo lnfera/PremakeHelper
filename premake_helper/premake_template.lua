@@ -16,9 +16,15 @@ local PROJECT_SETTINGS = {
 	-- Linker Settings
 	LINKER = {
 		DEPENDSON = { }, 		-- Other projects to build first
-		INCLUDE_DIRS = { },		-- Header search paths
+		INCLUDE_DIRS = { "./" },		-- Header search paths relative from premake_*.lua file add "./" to add a path to itself
 		LINKS = { },			-- Libraries to link.
-		FILES = { }, 			-- File extensions and extra linker input files. Example: DIRECTORIES[SOURCE].."folder/**.hpp", DIRECTORIES[SOURCE].."folder/**.cpp"
+		FILES = { 
+			"**.h",
+			"**.hpp",
+			"**.cpp",
+			"**.inl",
+			"**.lua",
+	 	}, 			-- File extensions and extra linker input files. Example: DIRECTORIES[SOURCE].."folder/**.hpp", DIRECTORIES[SOURCE].."folder/**.cpp"
 	},
 	
 	-- Config Filters from SETTING_WORKSPACE.CONFIGURATIONS.*

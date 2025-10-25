@@ -16,7 +16,7 @@ local PROJECT_SETTINGS = {
 	-- Linker Settings
 	LINKER = {
 		DEPENDSON = { }, 		-- Other projects to build first
-		INCLUDE_DIRS = { },		-- Header search paths
+		INCLUDE_DIRS = { "./" },		-- Header search paths
 		LINKS = { },			-- Libraries to link.
 		FILES = { 
 			"**.h",
