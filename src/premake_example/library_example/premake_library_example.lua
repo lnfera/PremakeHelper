@@ -15,9 +15,19 @@ local PROJECT_SETTINGS = {
 
 	-- Linker Settings
 	LINKER = {
-		DEPENDSON = { }, 		-- Other projects to build first
-		INCLUDE_DIRS = { "./" },		-- Header search paths
-		LINKS = { },			-- Libraries to link.
+		-- Name of other projects to build first
+		DEPENDSON = { 
+			
+		},
+		-- Header search paths relative from premake_*.lua file add "./" to add a path to itself
+		INCLUDE_DIRS = { 
+			"./" 
+		},
+		-- Libraries to link.
+		LINKS = { 
+		},
+		-- File extensions and extra linker input files.
+		-- Example: DIRECTORIES[SOURCE].."folder/**.hpp", "folder/**.cpp", "**.cpp"
 		FILES = { 
 			"**.h",
 			"**.hpp",
@@ -28,10 +38,13 @@ local PROJECT_SETTINGS = {
 	
 	-- Config Filters from SETTING_WORKSPACE.CONFIGURATIONS.*
 	-- Example:
-	-- SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME = {
-	-- SYMBOLS = ON / OFF,
-	-- OPTIMIZE = ON / OFF,
-	-- KIND = KIND_CONSOLE / KIND_LIBRARY / KIND_WINDOWED
+	-- CONFIG_FILTER = {
+	--	{
+	-- 		FILTER_NAME = SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME, -- Not optional for filter to work
+	-- 		SYMBOLS = ON / OFF, 
+	-- 		OPTIMIZE = ON / OFF,
+	-- 		KIND = KIND_CONSOLE / KIND_LIBRARY / KIND_WINDOWED
+	--	},
 	--}
 	CONFIG_FILTER = { }
 }
