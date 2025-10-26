@@ -56,3 +56,6 @@ SETTING_WORKSPACE = {
 		}
 	}
 }
+
+PCH_H_EXTENSION = ".hpp"
+PCH_CPP_EXTENSION = ".cpp"

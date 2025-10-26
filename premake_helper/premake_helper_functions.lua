@@ -28,8 +28,8 @@ function SetUpProject(setting)
 		dependson (setting.LINKER.DEPENDSON)
 
 		if setting.PCH then
-			pchheader (setting.PCH..".hpp")
-            pchsource (setting.PCH..".cpp")
+			pchheader (setting.PCH..PCH_H_EXTENSION)
+            pchsource (setting.PCH..PCH_CPP_EXTENSION)
 		end
 
 		for name, config in pairs(setting.CONFIG_FILTER) do
