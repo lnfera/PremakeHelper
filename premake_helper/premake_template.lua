@@ -27,15 +27,15 @@ local PROJECT_SETTINGS = {
 	 	}, 			-- File extensions and extra linker input files. Example: DIRECTORIES[SOURCE].."folder/**.hpp", DIRECTORIES[SOURCE].."folder/**.cpp"
 	},
 	
-	-- Config Filters from SETTING_WORKSPACE.CONFIGURATIONS.*
+-- Config Filters from SETTING_WORKSPACE.CONFIGURATIONS.*
 	-- Example:
-	-- SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME = {
-	-- SYMBOLS = ON / OFF,
+	-- CONFIG_FILTER = {
+	-- FILTER_NAME = SETTING_WORKSPACE.CONFIGURATIONS.DEBUG.NAME, -- Not optional for filter to work
+	-- SYMBOLS = ON / OFF, 
 	-- OPTIMIZE = ON / OFF,
 	-- KIND = KIND_CONSOLE / KIND_LIBRARY / KIND_WINDOWED
 	--}
 	CONFIG_FILTER = { 
-
 	}
 }
 

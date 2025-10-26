@@ -32,11 +32,15 @@ function SetUpProject(setting)
             pchsource (setting.PCH..PCH_CPP_EXTENSION)
 		end
 
-		for name, config in pairs(setting.CONFIG_FILTER) do
-			filter("configurations:" .. configName)
-				if setting.DEFINES then defines(setting.DEFINES) end
-				if setting.SYMBOLS then symbols(setting.SYMBOLS) end
-				if setting.OPTIMIZE then optimize(setting.OPTIMIZE) end
+		for _, config in pairs(setting.CONFIG_FILTER) do
+
+			assert(config.FILTER_NAME, "Forgot to set filter name!")
+
+			filter("configurations:" .. config.FILTER_NAME)
+				if config.DEFINES then defines(config.DEFINES) end
+				if config.SYMBOLS then symbols(config.SYMBOLS) end
+				if config.OPTIMIZE then optimize(config.OPTIMIZE) end
+				if config.KIND then kind(config.KIND) end
 		end 
 end
 
