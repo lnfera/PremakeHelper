@@ -1,3 +1,4 @@
+-- Make sure that these are relative paths to the helper folder 
 include "premake_defines"
 include "premake_helper_functions"
 
